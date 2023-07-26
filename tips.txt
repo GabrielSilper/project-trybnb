@@ -1,0 +1,2 @@
+Para importar um arquivo para o mongo tendo autenticação:
+    - mongoimport -d project -c listing --authenticationDatabase admin -u root -p example --file /app-mongo/new-trybnb.json
