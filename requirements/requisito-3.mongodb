@@ -1,0 +1,5 @@
+use('project');
+db.listing
+  .find({}, { name: true, bedrooms: true })
+  .sort({ bedrooms: -1 })
+  .limit(1);

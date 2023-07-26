@@ -1,0 +1,7 @@
+use('project');
+db.listing
+  .find(
+    { $and: [{ price: { $gt: 155 } }, { price: { $lt: 200 } }] },
+    { name: true, price: true }
+  )
+  .sort({ price: -1, name: 1 });
