@@ -1,0 +1,13 @@
+use('project');
+db.listing
+  .find(
+    {
+      $or: [
+        { number_of_reviews: { $gt: 300 } },
+        { 'review_scores.review_scores_rating': { $gte: 95 } },
+      ],
+    },
+    { name: true, number_of_reviews: true, review_scores: true }
+  )
+  .sort({ number_of_reviews: -1, 'review_scores.review_scores_rating': -1, name: 1 })
+  .limit(500);

@@ -1,0 +1,9 @@
+use('project');
+db.listing.find(
+  { 'host.host_is_superhost': true },
+  {
+    'host.host_id': 1,
+    'host.host_name': 1,
+    'host.host_location': 1,
+  }
+);

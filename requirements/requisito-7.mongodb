@@ -1,0 +1,5 @@
+use('project');
+db.listing.find(
+  { 'host.host_is_superhost': true, number_of_reviews: { $gt: 500 } },
+  { name: 1, summary: 1, price: 1, review_scores: 1 }
+);

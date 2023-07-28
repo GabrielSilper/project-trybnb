@@ -1,0 +1,15 @@
+db.listing.find(
+  {
+    $and: [
+      { images: { $exists: true } },
+      {
+        'images.picture_url': {
+          $not: {
+            $regex: /^https:\/\/(a0\.muscache\.com)([\\/\-a-z0-9]*)(.jpg)/,
+          },
+        },
+      },
+    ],
+  },
+  { images: 1, _id: 1 }
+);
